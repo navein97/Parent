@@ -9,6 +9,8 @@
 <!-- Toggle Off-->
 <!-- Unmount and Update -->
 
+<!-- npm run serve -->
+
 <script>
 import ParentCom from "./components/Parent.vue";
 
