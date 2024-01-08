@@ -3,6 +3,12 @@
   <ParentCom />
 </template>
 
+<!-- Toggle On-->
+<!-- Create and Mount and Update -->
+
+<!-- Toggle Off-->
+<!-- Unmount and Update -->
+
 <script>
 import ParentCom from "./components/Parent.vue";
 
@@ -11,6 +17,13 @@ export default {
   components: { ParentCom },
 };
 </script>
+
+<style scoped>
+.green {
+  color: greenyellow;
+  font-weight: bold;
+}
+</style>
 
 <style>
 #app {

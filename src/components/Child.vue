@@ -17,12 +17,7 @@ export default {
   mounted() {
     console.log("ChildCom mounted()");
   },
-  beforeUpdate() {
-    console.log("ChildCom beforeUpdate()");
-  },
-  updated() {
-    console.log("ChildCom updated()");
-  },
+
   beforeUnmount() {
     console.log("ChildCom beforeUnmount()");
   },

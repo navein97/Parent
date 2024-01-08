@@ -1,6 +1,6 @@
 <template>
   <div>
-    ParentCom component
+    <p class="green">ParentCom component</p>
     <button @click="showChild = !showChild">Toggle Child</button>
     <ChildCom v-if="showChild" />
   </div>
@@ -16,29 +16,12 @@ export default {
       showChild: true,
     };
   },
-  beforeCreate() {
-    console.log("ParentCom beforeCreate()");
-  },
-  created() {
-    console.log("ParentCom created()");
-  },
-  beforeMount() {
-    console.log("ParentCom beforeMount()");
-  },
-  mounted() {
-    console.log("ParentCom mounted()");
-  },
+
   beforeUpdate() {
     console.log("ParentCom beforeUpdate()");
   },
   updated() {
     console.log("ParentCom updated()");
-  },
-  beforeUnmount() {
-    console.log("ParentCom beforeUnmount()");
-  },
-  unmounted() {
-    console.log("ParentCom unmounted()");
   },
 };
 </script>
