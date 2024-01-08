@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="green">ParentCom component</p>
+    <p>ParentCom component</p>
     <button @click="showChild = !showChild">Toggle Child</button>
     <ChildCom v-if="showChild" />
   </div>

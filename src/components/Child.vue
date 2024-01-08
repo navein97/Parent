@@ -1,5 +1,5 @@
 <template>
-  <div>Child component</div>
+  <div class="green">Child component</div>
 </template>
 
 <script>
@@ -27,6 +27,15 @@ export default {
 };
 </script>
 
+<!-- style scoped you dont pinjam the style to other components -->
+<!-- If not, -->
+<!-- They could potentially affect the entire application -->
+<style scoped>
+.green {
+  color: rgb(106, 0, 255);
+  font-weight: bold;
+}
+</style>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

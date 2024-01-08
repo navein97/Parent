@@ -20,13 +20,6 @@ export default {
 };
 </script>
 
-<style scoped>
-.green {
-  color: greenyellow;
-  font-weight: bold;
-}
-</style>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
