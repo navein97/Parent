@@ -1,8 +1,8 @@
 <template>
   <div>
-    <p>ParentCom component</p>
+    <p>Parent component</p>
     <button @click="showChild = !showChild">Toggle Child</button>
-    <ChildCom v-if="showChild" />
+    <ChildCom v-if="showChild" @childFormSubmit="handleChildFormSubmit" />
   </div>
 </template>
 
@@ -16,7 +16,12 @@ export default {
       showChild: true,
     };
   },
-
+  methods: {
+    handleChildFormSubmit(dataFromChild) {
+      // Handle the form submission data from ChildCom
+      console.log("Form data received in ParentCom:", dataFromChild);
+    },
+  },
   beforeUpdate() {
     console.log("ParentCom beforeUpdate()");
   },

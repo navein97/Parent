@@ -1,28 +1,37 @@
 <template>
-  <div class="green">Child component</div>
+  <h2>{{ name }}</h2>
+  <div>
+    <p class="green">Child component</p>
+    <form @submit.prevent="submitForm">
+      <label for="childInput">Child Input:</label>
+      <input v-model="formData" type="text" id="childInput" />
+      <!-- v-model: what data is input, thats the data displayed -->
+      <button v-on:click="changeName">Change name</button>
+    </form>
+  </div>
 </template>
 
 <script>
 export default {
   name: "ChildCom",
-  beforeCreate() {
-    console.log("ChildCom beforeCreate()");
+  data() {
+    return {
+      name: "Lee",
+      formData: "",
+    };
   },
-  created() {
-    console.log("ChildCom created()");
-  },
-  beforeMount() {
-    console.log("ChildCom beforeMount()");
-  },
-  mounted() {
-    console.log("ChildCom mounted()");
-  },
+  methods: {
+    changeName() {
+      // Update the name with the value from formData
+      this.name = this.formData;
+    },
 
-  beforeUnmount() {
-    console.log("ChildCom beforeUnmount()");
-  },
-  unmounted() {
-    console.log("ChildCom unmounted()");
+    submitForm() {
+      // Emit an event to the parent with the form data
+      this.$emit("childFormSubmit", this.formData);
+      // Reset the form data
+      this.formData = "";
+    },
   },
 };
 </script>
@@ -30,7 +39,9 @@ export default {
 <!-- style scoped you dont pinjam the style to other components -->
 <!-- If not, -->
 <!-- They could potentially affect the entire application -->
+
 <style scoped>
+/* Template and Style Scoping */
 .green {
   color: rgb(106, 0, 255);
   font-weight: bold;
